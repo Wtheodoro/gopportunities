@@ -4,14 +4,12 @@ import "github.com/gin-gonic/gin"
 
 // Funcitons with first letter captalized are automatically exported
 func Initializ() {
+	//  Initialize Router
 	router := gin.Default()
-	// Defeinido uma Rota
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
 
-	// Executando a api
+	// Initialize Routes
+	initializeRoutes(router)
+	
+	// Run the API
 	router.Run(":8080") 
 }
